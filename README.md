@@ -1,3 +1,5 @@
+ai readme idk br
+
 # ESC Log Archive
 
 A small, static website for browsing ESC records. It uses plain HTML, CSS, and JavaScript, with the log entries stored separately in JSON.
