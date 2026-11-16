@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1110">
+  <title>ESC // Internal Archive</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">S / ARCHIVE</div>
+    <div class="top-status">NETWORK: <span>LOCAL</span> &nbsp; // &nbsp; ACCESS: INTERNAL</div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="eyebrow">Sector records division</div>
+      <h1>ESC // LOG INDEX</h1>
+      <label class="sr-only" for="search">Search records</label>
+      <input id="search" class="search" type="search" placeholder="Search records...">
+      <div class="section-label">AVAILABLE RECORDS</div>
+      <nav id="logList" class="log-list" aria-label="Log entries"></nav>
+    </aside>
+
+    <main class="main">
+      <div class="crumb">ARCHIVE / PERSONNEL / ESC / <span id="crumbId">SELECT RECORD</span></div>
+      <section class="record-head">
+        <div>
+          <h2 id="title">No record selected</h2>
+          <div class="record-id" id="recordId">AWAITING INPUT</div>
+        </div>
+        <div class="status" id="status">STANDBY</div>
+      </section>
+
+      <section class="meta" aria-label="Record metadata">
+        <div class="meta-item"><div class="meta-label">Date logged</div><div class="meta-value" id="date">—</div></div>
+        <div class="meta-item"><div class="meta-label">Filed by</div><div class="meta-value" id="author">—</div></div>
+        <div class="meta-item"><div class="meta-label">Clearance</div><div class="meta-value" id="clearance">—</div></div>
+      </section>
+
+      <div class="content-label">RECORD CONTENTS</div>
+      <article class="content" id="content">Select a record from the index to view its contents.</article>
+      <div class="footer"><span>UNAUTHORISED DISTRIBUTION PROHIBITED</span><span id="recordCount">LOADING RECORDS</span></div>
+      <p class="error" id="error" hidden></p>
+    </main>
+  </div>
+</body>
+</html>
