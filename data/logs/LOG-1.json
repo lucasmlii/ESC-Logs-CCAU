@@ -1,9 +1,9 @@
 {
   "id": "LOG-1",
-  "title": "Initial registration",
-  "date": "DATE WITHHELD",
-  "author": "Personnel Division",
+  "title": "Sector Log 1",
+  "date": "?/??/????",
+  "author": "ESC",
   "clearance": "LEVEL 1",
-  "status": "PLACEHOLDER",
-  "body": "This is a placeholder record.\n\nReplace this text with the first ESC log when it has been written."
+  "status": "ACTIVE",
+  "body": "It's rather interesting how these “Sectors” are so.. naive. Really, they don't even check the things I point out to them. Why pay me to try and find issues with your stuff if it's just meaningless to you?"
 }
