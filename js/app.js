@@ -102,7 +102,7 @@ function selectLog(id) {
   document.getElementById("recordId").textContent = log.id;
   document.getElementById("date").textContent = log.date;
   document.getElementById("author").textContent = log.author;
-  document.getElementById("clearance").textContent = log.clearance;
+  document.getElementById("logtype").textContent = log.logtype;
 
   const status = document.getElementById("status");
   status.textContent = log.status;
