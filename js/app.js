@@ -6,15 +6,32 @@ let logs = [];
 let selectedId = null;
 
 
+
 async function loadLogs() {
   try {
-    const response = await fetch("/api/logs");
+    // Get the list of JSON filenames
+    const indexResponse = await fetch("data/logs/index.json");
 
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}`);
+    if (!indexResponse.ok) {
+      throw new Error(`Could not load index: HTTP ${indexResponse.status}`);
     }
 
-    logs = await response.json();
+    const filenames = await indexResponse.json();
+
+    // Load each individual record
+    logs = await Promise.all(
+      filenames.map(async filename => {
+        const response = await fetch(
+          `data/logs/${encodeURIComponent(filename)}`
+        );
+
+        if (!response.ok) {
+          throw new Error(`Could not load ${filename}`);
+        }
+
+        return await response.json();
+      })
+    );
 
     document.getElementById("recordCount").textContent =
       `${logs.length} RECORDS`;
@@ -30,11 +47,15 @@ async function loadLogs() {
 
   } catch (error) {
     errorBox.hidden = false;
-    errorBox.textContent = "Could not load records. Check the server and JSON files.";
+    errorBox.textContent =
+      "Could not load records. Check the index and JSON files.";
+
     document.getElementById("recordCount").textContent = "DATA UNAVAILABLE";
+
     console.error(error);
   }
 }
+
 
 
 function renderList() {
