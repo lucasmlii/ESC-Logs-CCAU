@@ -61,7 +61,7 @@ async function loadLogs() {
 function renderList() {
   const term = search.value.trim().toLowerCase();
   const matches = logs.filter(log =>
-    `${log.id} ${log.title} ${log.author} ${log.body}`.toLowerCase().includes(term)
+    `${log.id} ${log.title} ${log.author} ${log.logtype} ${log.body}`.toLowerCase().includes(term)
   );
 
   list.replaceChildren();
